@@ -182,7 +182,7 @@ class _HomeState extends State<Home> {
                                   fontSize: 20
                                 ),),
                                 onPressed: (){
-                                  if(_controllerEmail.text=='gabriel.daim@hotmail.com' && _controllerSenha.text=='oi'){
+                                  if(_controllerEmail.text=='gabriel.daim@hotmail.com' && _controllerSenha.text=='42'){
                                     _Salvar2();
                                     Navigator.push(context, MaterialPageRoute(
                                         builder: (context) => SegundaTela()
@@ -413,12 +413,13 @@ class CustomDialog2 extends StatelessWidget{
                 ),
               ),
               SizedBox(height: 10),
-              Text("bla bla bla bla",
+              Text("Resposta para a vida o universo e tudo mais.",
                 style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.normal,
                     color: Colors.black
                 ),
+                  textAlign: TextAlign.center
               ),
               SizedBox(height: 10,),
               Align(

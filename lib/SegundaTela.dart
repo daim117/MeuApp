@@ -18,7 +18,7 @@ class SegundaTela extends StatefulWidget {
 class _SegundaTelaState extends State<SegundaTela> {
   @override
 
-
+int i = 0;
   _enviarMensagem(
       ){
     if(valueChoose != null){
@@ -29,16 +29,19 @@ class _SegundaTelaState extends State<SegundaTela> {
           listItem.clear();
           listItem.add(listItem2[0]);
           listItem.add(listItem2[1]);
+          i=1;
           break;
         case 'item5':
           listItem.clear();
           listItem.add(listItem3[0]);
           listItem.add(listItem3[1]);
+          i=2;
           break;
         case 'item6':
           listItem.clear();
           listItem.add(listItem3[0]);
           listItem.add(listItem3[1]);
+          i=3;
           break;
       }
       valueChoose = null;
@@ -47,9 +50,34 @@ class _SegundaTelaState extends State<SegundaTela> {
         tamanhoLista = tamanhoLista + 1;
         _status = !_status;
       });
+      _receberMensagem();
 
     }
   }
+  _receberMensagem(
+      ){
+      switch (i){
+        case 1:
+          listaMensagens.add('Você escolheu o item 1');
+          break;
+        case 2:
+          listaMensagens.add('Você escolheu o item 5');
+          break;
+        case 3:
+          listaMensagens.add('Você escolheu o item 6');
+          break;
+      }
+
+
+      setState(() {
+        tamanhoLista = tamanhoLista + 1;
+        //_status = !_status;
+      });
+
+
+  }
+
+
   List <String>listItem2 = ['item5','item6'];
   List <String>listItem3 = ['item7','item8'];
 
@@ -75,7 +103,7 @@ class _SegundaTelaState extends State<SegundaTela> {
 
     var escrevendo = AnimatedContainer(
       height: _status ? 40 : 0,
-      duration: Duration(seconds: 1),
+      duration: Duration(milliseconds: 200),
       child: Row(
         children: [
           Padding(

@@ -1,9 +1,9 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/services.dart';
 import 'package:audioplayers/audio_cache.dart';
+
 
 class Cadastro extends StatefulWidget {
 
@@ -17,14 +17,10 @@ class Cadastro extends StatefulWidget {
 
 class _CadastroState extends State<Cadastro> {
 
+  AudioCache _audioCache = AudioCache();
 
-  AudioPlayer audioPLayer = AudioPlayer();
-  AudioCache audioCache = AudioCache(prefix: 'audio/');
-
-  _somBotao() async{
-    
-    audioPLayer = await audioCache.play('mensagem.wav');
-
+  _som(String audio){
+    _audioCache.play(audio);
   }
 
   TextEditingController _controllerEmail = TextEditingController();
@@ -34,7 +30,6 @@ class _CadastroState extends State<Cadastro> {
 
   @override
   Widget build(BuildContext context) {
-    _somBotao();
     return Scaffold(
       body: SafeArea(child:
 
@@ -161,7 +156,7 @@ class _CadastroState extends State<Cadastro> {
                               fontSize: 20
                           ),),
                         onPressed: (){
-                          _somBotao();
+                          _som('botao.mp3');
                           showDialog(context: context, builder: (context) => CustomDialog(
                             title: "Erro!",
                             description: "Novos usuários não estão sendo mais permitidos. Caso já tenha uma conta e não lembre a senha será necessário recupera-la.",

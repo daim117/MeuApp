@@ -1,3 +1,4 @@
+import 'package:audioplayers/audio_cache.dart';
 import 'package:flare_flutter/flare.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,7 @@ int i = 0;
   _enviarMensagem(
       ){
     if(valueChoose != null){
+      _som('mensagem.wav');
       print(valueChoose);
       listaMensagens.add(valueChoose);
       switch (valueChoose){
@@ -230,6 +232,12 @@ int i = 0;
 
   List listaMensagens=[];
  bool _status = false;
+
+  AudioCache _audioCache = AudioCache();
+
+  _som(String audio){
+    _audioCache.play(audio);
+  }
 
   Widget build(BuildContext context) {
 

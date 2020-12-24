@@ -69,9 +69,10 @@ flutter:
     - imagens/sofia2.json
     - imagens/teste.json
     - imagens/escrevendo.json
-    - assets/audio/mensagem.wav
-    - assets/audio/botao.mp3
-    - assets/audio/fundo.mp3
+    - assets/mensagem.wav
+    - assets/botao.mp3
+    - assets/fundo.mp3
+    - assets/intro.wav
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

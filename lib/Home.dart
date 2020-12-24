@@ -1,6 +1,6 @@
+import 'package:audioplayers/audio_cache.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/services.dart';
 import 'package:meu_app/Cadastro.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -19,7 +19,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+  AudioCache _audioCache = AudioCache();
 
+  _som(String audio){
+    _audioCache.play(audio);
+  }
 
   TextEditingController _controllerEmail = TextEditingController();
   TextEditingController _controllerSenha = TextEditingController();
@@ -146,7 +150,7 @@ class _HomeState extends State<Home> {
                         Padding(padding: EdgeInsets.fromLTRB(0, 0, 25, 20),
                             child: Align(
                           child: FlatButton(onPressed: (){
-
+                            _som('botao.mp3');
                             showDialog(context: context, builder: (context) => CustomDialog(
                               title: "Esqueceu a senha?",
                               description: "Digite aqui seu email:",
@@ -182,6 +186,7 @@ class _HomeState extends State<Home> {
                                   fontSize: 20
                                 ),),
                                 onPressed: (){
+                                  _som('botao.mp3');
                                   if(_controllerEmail.text=='gabriel.daim@hotmail.com' && _controllerSenha.text=='42'){
                                     _Salvar2();
                                     Navigator.push(context, MaterialPageRoute(
@@ -201,6 +206,7 @@ class _HomeState extends State<Home> {
                             padding: EdgeInsets.only(top: 0),
 
                             child: FlatButton(onPressed: (){
+                              _som('botao.mp3');
                               Navigator.push(context, MaterialPageRoute(
                                 builder: (context) => Cadastro()
                               ));

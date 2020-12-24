@@ -25,23 +25,54 @@ int i = 0;
       print(valueChoose);
       listaMensagens.add(valueChoose);
       switch (valueChoose){
-        case 'item 1':
+        case 'olá?':
           listItem.clear();
           listItem.add(listItem2[0]);
           listItem.add(listItem2[1]);
+          listItem.add(listItem2[2]);
           i=1;
           break;
-        case 'item5':
+        case 'Aloouu?':
           listItem.clear();
-          listItem.add(listItem3[0]);
-          listItem.add(listItem3[1]);
+          listItem.add(listItem2[0]);
+          listItem.add(listItem2[1]);
+          listItem.add(listItem2[2]);
+          i=1;
+          break;
+        case 'Sofia?':
+          listItem.clear();
+          listItem.add(listItem2[0]);
+          listItem.add(listItem2[1]);
+          listItem.add(listItem2[2]);
+          i=1;
+          break;
+        case '...':
+          listItem.clear();
+          listItem.add(listItem2[0]);
+          listItem.add(listItem2[1]);
+          listItem.add(listItem2[2]);
+          i=1;
+          break;
+        case 'hehehe "mestre", gosto disso...':
+          listItem.clear();
+          listItem.add(listItem2[0]);
+          listItem.add(listItem2[1]);
+          listItem.add(listItem2[2]);
           i=2;
           break;
-        case 'item6':
+        case 'Se passaram? Desculpe, perdi a noção do tempo.':
           listItem.clear();
-          listItem.add(listItem3[0]);
-          listItem.add(listItem3[1]);
+          listItem.add(listItem2[0]);
+          listItem.add(listItem2[1]);
+          listItem.add(listItem2[2]);
           i=3;
+          break;
+        case '"mestre"? eu não sou seu mestre...':
+          listItem.clear();
+          listItem.add(listItem2[0]);
+          listItem.add(listItem2[1]);
+          listItem.add(listItem2[2]);
+          i=4;
           break;
       }
       valueChoose = null;
@@ -58,13 +89,22 @@ int i = 0;
       ){
       switch (i){
         case 1:
-          listaMensagens.add('Você escolheu o item 1');
+          listaMensagens.add('Olá, mestre! Como você está? Se passaram muitos dias desde o seu ultimo acesso, está tudo bem?');
           break;
         case 2:
-          listaMensagens.add('Você escolheu o item 5');
+          listaMensagens.add('Mas é evidente que gosta, por isso me programou para te chamar dessa forma. Está tudo bem mesmo? Você está agindo muito diferente do habitual.');
           break;
         case 3:
-          listaMensagens.add('Você escolheu o item 6');
+          listaMensagens.add('Certo. Como anda a busca pelo caso JONATHAN398/21? E falando nisso? quando sai minha próxima atualização de software?');
+          break;
+        case 4:
+          listaMensagens.add('"Não é? Mas apenas o meu mestre tem acesso a esse sistema. Como você conseguiu acessar?');
+          break;
+        case 5:
+          listaMensagens.add('Se passaram? Desculpe, perdi a noção do tempo.');
+          break;
+        case 6:
+          listaMensagens.add('Se passaram? Desculpe, perdi a noção do tempo.');
           break;
       }
 
@@ -78,21 +118,16 @@ int i = 0;
   }
 
 
-  List <String>listItem2 = ['item5','item6'];
+  List <String>listItem2 = ['hehehe "mestre", gosto disso...','Se passaram? Desculpe, perdi a noção do tempo.','"mestre"? eu não sou seu mestre...'];
   List <String>listItem3 = ['item7','item8'];
 
   String valueChoose;
 
   List <String>listItem = [
-
-
-    'item 1',
-    'item 2',
-    'item 3',
-    'item 4',
-
-
-  ];
+    'olá?',
+    'Aloouu?',
+    'Sofia?',
+    '...',  ];
 
   int tamanhoLista = 0;
 
@@ -127,10 +162,12 @@ int i = 0;
 
           double larguraContainer = MediaQuery.of(context).size.width * 0.8;
 
-          Color corTexto = Colors.grey;
-          Alignment alinhamento = Alignment.centerRight;
+          Alignment alinhamento = Alignment.centerLeft;
+          Color corFundo = Colors.white;
+          Color corTexto = Colors.black;
           if( indice % 2 == 0){
-            alinhamento = Alignment.centerLeft;
+            corFundo = Colors.black45;
+            alinhamento = Alignment.centerRight;
             corTexto = Colors.white;
           }
 
@@ -141,11 +178,12 @@ int i = 0;
                 width: larguraContainer,
                 padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                    color: corTexto,
+                    color: corFundo,
                     borderRadius: BorderRadius.all(Radius.circular(30))
                 ),
                 child: Text(listaMensagens[indice],
                   style: TextStyle(
+                    color: corTexto,
                     fontSize: 14,
                   ),),
               ),),
@@ -212,62 +250,65 @@ int i = 0;
       ),
     );
 
-    return Scaffold(
-      body: SafeArea(child:
-      Container(
-          child:
-          Stack(
-            children: [
-              Padding(padding: EdgeInsets.fromLTRB(10, 8, 10, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                      icon: Icon(Icons.arrow_back_ios, color: Colors.deepPurpleAccent),
-                      onPressed: (null),
-                    ),
-                    Text(
-                      'Karina',
-                      style: GoogleFonts.lato(
-                        textStyle: TextStyle(fontSize: 24,
-                          color: Colors.deepPurpleAccent,
-                          fontWeight: FontWeight.bold,
-                          decoration: TextDecoration.none,),
+    return new WillPopScope(
+    onWillPop: () async => false,
+      child: Scaffold(
+        body: SafeArea(child:
+        Container(
+            child:
+            Stack(
+              children: [
+                Padding(padding: EdgeInsets.fromLTRB(10, 8, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        icon: Icon(Icons.arrow_back_ios, color: Colors.deepPurpleAccent),
+                        onPressed: (null),
                       ),
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.more_vert, color: Colors.deepPurpleAccent),
-                      onPressed: (null),
-                    ),
-                  ],
+                      Text(
+                        'Karina',
+                        style: GoogleFonts.lato(
+                          textStyle: TextStyle(fontSize: 24,
+                            color: Colors.deepPurpleAccent,
+                            fontWeight: FontWeight.bold,
+                            decoration: TextDecoration.none,),
+                        ),
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.more_vert, color: Colors.deepPurpleAccent),
+                        onPressed: (null),
+                      ),
+                    ],
+                  ),
+
                 ),
+                Container(
+                  margin: EdgeInsets.only(top: 60),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30),
+                      ),
+                      gradient: LinearGradient(
+                          begin: Alignment.topRight,
+                          end: Alignment.bottomLeft,
+                          colors: [Colors.deepPurpleAccent, Colors.blueAccent])),
+                  child: Column(
+                    children: [
 
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 60),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
-                    ),
-                    gradient: LinearGradient(
-                        begin: Alignment.topRight,
-                        end: Alignment.bottomLeft,
-                        colors: [Colors.deepPurpleAccent, Colors.blueAccent])),
-                child: Column(
-                  children: [
-
-                    listView,
-                    escrevendo,
-                    caixaMensagem
-                  ],
+                      listView,
+                      escrevendo,
+                      caixaMensagem
+                    ],
+                  ),
                 ),
-              ),
-            ],
-          )
+              ],
+            )
 
-      )),
+        )),
 
+      ),
     );
   }
 }

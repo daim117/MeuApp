@@ -19,11 +19,11 @@ class _CadastroState extends State<Cadastro> {
 
 
   AudioPlayer audioPLayer = AudioPlayer();
-  AudioCache audioCache = AudioCache();
+  AudioCache audioCache = AudioCache(prefix: 'audio/');
 
   _somBotao() async{
     
-    audioPLayer = audioCache.play(botao.mp3)
+    audioPLayer = await audioCache.play('mensagem.wav');
 
   }
 
@@ -34,6 +34,7 @@ class _CadastroState extends State<Cadastro> {
 
   @override
   Widget build(BuildContext context) {
+    _somBotao();
     return Scaffold(
       body: SafeArea(child:
 

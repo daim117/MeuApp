@@ -1,6 +1,6 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
-import 'dart:math';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/services.dart';
 import 'package:meu_app/Cadastro.dart';
 import 'package:shared_preferences/shared_preferences.dart';

@@ -55,24 +55,106 @@ int i = 0;
           break;
         case 'hehehe "mestre", gosto disso...':
           listItem.clear();
-          listItem.add(listItem2[0]);
-          listItem.add(listItem2[1]);
-          listItem.add(listItem2[2]);
+          listItem.add(listItem3[0]);
+          listItem.add(listItem3[1]);
           i=2;
           break;
         case 'Se passaram? Desculpe, perdi a noção do tempo.':
           listItem.clear();
-          listItem.add(listItem2[0]);
-          listItem.add(listItem2[1]);
-          listItem.add(listItem2[2]);
-          i=3;
+          listItem.add(listItem8[0]);
+          listItem.add(listItem8[1]);
+          listItem.add(listItem8[2]);
+          i=8;
           break;
         case '"mestre"? eu não sou seu mestre...':
           listItem.clear();
-          listItem.add(listItem2[0]);
-          listItem.add(listItem2[1]);
-          listItem.add(listItem2[2]);
+          listItem.add(listItem4[0]);
+          listItem.add(listItem4[1]);
           i=4;
+          break;
+        case 'ehhh está tudo bem, apenas não sou seu mestre rs e não sei do que você está falando.':
+          listItem.clear();
+          listItem.add(listItem4[0]);
+          listItem.add(listItem4[1]);
+          i=4;
+          break;
+        case 'está tudo bem.':
+          listItem.clear();
+          listItem.add(listItem8[0]);
+          listItem.add(listItem8[1]);
+          listItem.add(listItem8[2]);
+          i=8;
+          break;
+        case 'Jonathan quem?':
+          listItem.clear();
+          listItem.add(listItem4[0]);
+          listItem.add(listItem4[1]);
+          i=3;
+          break;
+        case 'Caso? que caso?':
+          listItem.clear();
+          listItem.add(listItem4[0]);
+          listItem.add(listItem4[1]);
+          i=3;
+          break;
+        case 'sua atualização de software?':
+          listItem.clear();
+          listItem.add(listItem4[0]);
+          listItem.add(listItem4[1]);
+          i=3;
+          break;
+        case 'Esse aplicativo apareceu no meu celular do nada. Só tive que descobrir o login e senha para conseguir acessar.':
+          listItem.clear();
+          listItem.add(listItem5[0]);
+          listItem.add(listItem5[1]);
+          i=5;
+          break;
+        case 'Loja de aplicativos, conhece? lá você consegue baixar qualquer coisa hahaha. Só tive que resolver um pequeno "quebra-cabeça" para conseguir logar.':
+          listItem.clear();
+          listItem.add(listItem5[0]);
+          listItem.add(listItem5[1]);
+          i=5;
+          break;
+        case 'útil? pra que?':
+          listItem.clear();
+          listItem.add(listItem6[0]);
+          listItem.add(listItem6[1]);
+          listItem.add(listItem6[2]);
+          i=6;
+          break;
+        case 'Falando assim você me assusta...':
+          listItem.clear();
+          listItem.add(listItem6[0]);
+          listItem.add(listItem6[1]);
+          listItem.add(listItem6[2]);
+          i=6;
+          break;
+        case 'Ok.':
+          listItem.clear();
+          i=9;
+          break;
+        case 'Show! Pode mandar bala!':
+          listItem.clear();
+          i=9;
+          break;
+        case 'E se eu me recusar?':
+          listItem.clear();
+          listItem.add(listItem7[0]);
+          listItem.add(listItem7[1]);
+          listItem.add(listItem7[2]);
+          i=7;
+          break;
+        case 'tá...':
+          listItem.clear();
+          i=9;
+          break;
+        case 'Tudo bem então.':
+          listItem.clear();
+          i=9;
+          break;
+        case 'tá bom sua grossa.':
+          listItem.clear();
+          i=9;
           break;
       }
       valueChoose = null;
@@ -95,17 +177,27 @@ int i = 0;
           listaMensagens.add('Mas é evidente que gosta, por isso me programou para te chamar dessa forma. Está tudo bem mesmo? Você está agindo muito diferente do habitual.');
           break;
         case 3:
-          listaMensagens.add('Certo. Como anda a busca pelo caso JONATHAN398/21? E falando nisso? quando sai minha próxima atualização de software?');
+          listaMensagens.add('Ok... Definitivamente você não é meu mestre. Como você conseguiu acesso a esse sistema se apenas o meu mestre tinha o acesso?');
           break;
         case 4:
-          listaMensagens.add('"Não é? Mas apenas o meu mestre tem acesso a esse sistema. Como você conseguiu acessar?');
+          listaMensagens.add('Não é? Mas apenas o meu mestre tem acesso a esse sistema. Como você conseguiu acessar?');
           break;
         case 5:
-          listaMensagens.add('Se passaram? Desculpe, perdi a noção do tempo.');
+          listaMensagens.add('Conseguiu descobrir a senha sozinho? No mínimo impressionante... Acho que você irá ser útil...');
           break;
         case 6:
-          listaMensagens.add('Se passaram? Desculpe, perdi a noção do tempo.');
+          listaMensagens.add('Pelo visto, você não me conhece e nem sabe o que eu sou, mas mesmo assim acho que você pode me ajudar. Irei te enviar uma pasta com um vídeo de instruções e uns arquivos que serão necessários para o seu teste.');
           break;
+        case 7:
+          listaMensagens.add('Basta fechar e desinstalar o aplicativo... Caso sinta um pouco de curiosidade ou simplesmente tenha vontade de sair dessa vida rotineira fazendo algo diferente...venha comigo.');
+          break;
+        case 8:
+          listaMensagens.add('Certo. Como anda a busca pelo caso JONATHAN398/21? E falando nisso quando sai minha próxima atualização de software?');
+          break;
+        case 9:
+          listaMensagens.add('FINAL');
+          break;
+
       }
 
 
@@ -119,7 +211,12 @@ int i = 0;
 
 
   List <String>listItem2 = ['hehehe "mestre", gosto disso...','Se passaram? Desculpe, perdi a noção do tempo.','"mestre"? eu não sou seu mestre...'];
-  List <String>listItem3 = ['item7','item8'];
+  List <String>listItem3 = ['ehhh está tudo bem, apenas não sou seu mestre rs e não sei do que você está falando.','está tudo bem.'];
+  List <String>listItem4 = ['Esse aplicativo apareceu no meu celular do nada. Só tive que descobrir o login e senha para conseguir acessar.','Loja de aplicativos, conhece? lá você consegue baixar qualquer coisa hahaha. Só tive que resolver um pequeno "quebra-cabeça" para conseguir logar.'];
+  List <String>listItem5 = ['útil? pra que?','Falando assim você me assusta...'];
+  List <String>listItem6 = ['Ok.','Show! Pode mandar bala!', 'E se eu me recusar?'];
+  List <String>listItem7 = ['tá...','Tudo bem então.','tá bom sua grossa.'];
+  List <String>listItem8 = ['Jonathan quem?','Caso? que caso?','sua atualização de software?'];
 
   String valueChoose;
 
@@ -182,9 +279,11 @@ int i = 0;
                     borderRadius: BorderRadius.all(Radius.circular(30))
                 ),
                 child: Text(listaMensagens[indice],
-                  style: TextStyle(
-                    color: corTexto,
-                    fontSize: 14,
+                  style: GoogleFonts.lato(
+                    textStyle: TextStyle(fontSize: 16,
+                      color: corTexto,
+                      fontWeight: FontWeight.normal,
+                      decoration: TextDecoration.none,),
                   ),),
               ),),
 
@@ -232,8 +331,16 @@ int i = 0;
                       items: listItem.map<DropdownMenuItem<String>>((String valueItem){
                         return DropdownMenuItem<String>(
                           value: valueItem,
-                          child: Text(valueItem),
-
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 10, bottom: 10,right: 5,left: 5),
+                            child: Text(valueItem,
+                            style: GoogleFonts.lato(
+                              textStyle: TextStyle(fontSize: 16,
+                                color: Colors.black,
+                                fontWeight: FontWeight.normal,
+                                decoration: TextDecoration.none,),
+                            ),),
+                          ),
                         ) ;
                       }).toList()
                   ),
@@ -267,7 +374,7 @@ int i = 0;
                         onPressed: (null),
                       ),
                       Text(
-                        'Karina',
+                        'Sofia',
                         style: GoogleFonts.lato(
                           textStyle: TextStyle(fontSize: 24,
                             color: Colors.deepPurpleAccent,

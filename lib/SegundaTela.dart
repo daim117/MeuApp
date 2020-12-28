@@ -18,15 +18,30 @@ class SegundaTela extends StatefulWidget {
 
 class _SegundaTelaState extends State<SegundaTela> {
   @override
-
+String mensagem = '';
 int i = 0;
+  _mensagemDelay() {
+    if (valueChoose != null){
+      mensagem = valueChoose;
+      listItem.clear();
+      setState(() {
+        tamanhoLista = tamanhoLista + 1;
+        _status = !_status;
+      });
+    _som('mensagem.wav');
+    print(valueChoose);
+    listaMensagens.add(valueChoose);
+    Future.delayed(Duration(seconds: 3), () {
+      print('indo agora');
+      _enviarMensagem();
+    });
+  }
+  }
   _enviarMensagem(
       ){
-    if(valueChoose != null){
-      _som('mensagem.wav');
-      print(valueChoose);
-      listaMensagens.add(valueChoose);
-      switch (valueChoose){
+    if(mensagem != null){
+
+      switch (mensagem){
         case 'olá?':
           listItem.clear();
           listItem.add(listItem2[0]);
@@ -162,7 +177,7 @@ int i = 0;
       valueChoose = null;
 
       setState(() {
-        tamanhoLista = tamanhoLista + 1;
+
         _status = !_status;
       });
       _receberMensagem();
@@ -359,7 +374,7 @@ int i = 0;
             backgroundColor: Colors.white,
             child: Icon(Icons.send, color: Colors.blue,),
             mini: true,
-            onPressed: _enviarMensagem,
+            onPressed: _mensagemDelay,
           )
         ],
       ),

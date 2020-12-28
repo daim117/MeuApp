@@ -73,6 +73,8 @@ flutter:
     - assets/botao.mp3
     - assets/fundo.mp3
     - assets/intro.wav
+    - assets/certo.wav
+    - assets/erro.wav
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

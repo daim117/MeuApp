@@ -1,3 +1,4 @@
+import 'package:audioplayers/audio_cache.dart';
 import 'package:meu_app/Home.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:flare_flutter/flare_actor.dart';
@@ -20,12 +21,18 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     );
   }
 }
+AudioCache _audioCache = AudioCache();
 
+_som(String audio){
+  _audioCache.play(audio);
+}
 class SplashScreenWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    _som('intro.wav');
     return Stack(
       children: <Widget>[
+
         SplashScreen(
           seconds: 7,
           backgroundColor: Colors.black,
@@ -37,6 +44,7 @@ class SplashScreenWidget extends StatelessWidget {
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+
             Container(
               width: 150,
               height: 70,
